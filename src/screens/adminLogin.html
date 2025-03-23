@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrador</title>
+    <!-- Se importa la hoja de estilos personalizada para el login de administradores -->
+    <link rel="stylesheet" href="../css/adminLogin.css">
+    <!-- Se importa la librería de Google Material Icons en caso de requerir iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Contenedor principal para el formulario de login -->
+    <div class="login-container">
+    <!-- Título del formulario -->
+    <h2>Iniciar Sesión Administrador</h2>
+    
+    <!-- Grupo de entrada para el correo electrónico -->
+    <div class="input-group">
+        <label for="admin-username">Usuario</label>
+        <input type="text" id="admin-username" placeholder="Ingrese su correo electrónico">
+        <!-- Mensaje de error para el correo electrónico -->
+        <div id="admin-email-error" class="error-message">Ingrese un correo electrónico válido.</div>
+    </div>
+    
+    <!-- Grupo de entrada para la contraseña -->
+    <div class="input-group">
+        <label for="admin-password">Contraseña</label>
+        <input type="password" id="admin-password" placeholder="Ingrese su contraseña">
+        <!-- Mensaje de error para la contraseña -->
+        <div id="admin-password-error" class="error-message">La contraseña debe tener al menos 8 caracteres, dos números y un carácter especial.</div>
+    </div>
+    
+    <!-- Botón para iniciar sesión, invoca la función de validación en adminLogin.js -->
+    <button class="btn btn-login" onclick="return validateAdminLogin()">Ingresar</button>
+    
+    <!-- Opcionales: enlaces a crear cuenta o recuperar contraseña -->
+    <a href="New_cuenta.html">
+        <button type="button" class="btn btn-secondary">Crear cuenta</button>
+    </a>
+    <a href="userForgot.html">
+        <button type="button" class="btn-forgot">Olvidé mi contraseña</button>
+    </a>
+    </div>
+    
+    <!-- Se importa el archivo JavaScript para la validación del login -->
+    <script src="../js/adminLogin.js"></script>
+</body>
+</html>

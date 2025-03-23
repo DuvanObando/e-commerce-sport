@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Usuario</title>
+    <!-- Se importa la hoja de estilos personalizada para el login de usuario -->
+    <link rel="stylesheet" href="../css/userLogin.css">
+    <!-- Se importa la librería de Google Material Icons en caso de requerir iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Contenedor principal para el formulario de login -->
+    <div class="login-container">
+    <!-- Título del formulario de login -->
+    <h2>Iniciar Sesión</h2>
+    
+    <!-- Grupo de entrada para el correo electrónico -->
+    <div class="input-group">
+        <label for="username">Usuario</label>
+        <input type="text" id="username" placeholder="Ingrese su correo electrónico">
+        <!-- Mensaje de error para correo electrónico -->
+        <div id="email-error" class="error-message">Ingrese un correo electrónico válido.</div>
+    </div>
+    
+    <!-- Grupo de entrada para la contraseña -->
+    <div class="input-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Ingrese su contraseña">
+        <!-- Mensaje de error para contraseña -->
+        <div id="password-error" class="error-message">La contraseña debe tener al menos 8 caracteres, dos números y un carácter especial.</div>
+    </div>
+    
+    <!-- Botón para iniciar sesión. Se invoca la función de validación definida en el archivo JS -->
+    <button class="btn btn-login" onclick="return validateLogin()">Ingresar</button>
+    
+    <!-- Enlace para crear una cuenta nueva -->
+    <a href="newUser.html">
+        <button type="button" class="btn btn-secondary">Crear cuenta</button>
+    </a>
+    
+    <!-- Botón para la opción "Olvidé mi contraseña" -->
+    <button type="button" class="btn-forgot">Olvidé mi contraseña</button>
+    </div>
+
+    <!-- Se importa el archivo JavaScript para la validación del login -->
+    <script src="../js/userLogin.js"></script>
+</body>
+</html>
