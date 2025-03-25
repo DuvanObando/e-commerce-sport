@@ -1,0 +1,95 @@
+/* Establecer el fondo con la imagen proporcionada */
+.login-container {
+    background: url('../assets/login.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Caja flotante con desenfoque */
+  .login-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Estilos del título */
+  .login-box h2 {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  /* Inputs con íconos */
+  .input-group {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    width: 88%;
+    padding: 10px;
+    padding-left: 35px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Opciones extra (recordar y olvidar contraseña) */
+  .extra-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .extra-options a {
+    color: #ccc;
+    text-decoration: none;
+  }
+  
+  .extra-options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botón de inicio de sesión */
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-btn:hover {
+    background: #333;
+  }
+  
+  /* Enlace de registro */
+  .login-text {
+    margin-top: 15px;
+    color: white;
+  }
+  
+  p a {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
