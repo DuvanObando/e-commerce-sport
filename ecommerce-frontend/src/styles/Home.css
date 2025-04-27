@@ -2,42 +2,7 @@
 .home-container {
     font-family: Arial, sans-serif;
     color: white;
-    background: rgb(21, 2, 81);
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgb(75, 39, 157);
-    padding: 15px 30px;
-  }
-
-  .navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar nav ul li {
-    display: inline;
-  }
-  
-  .navbar nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .navbar .icons {
-    display: flex;
-    gap: 15px;
+    background: #479FD6;
   }
   
   /* Hero Section */
@@ -93,7 +58,7 @@
     width: 200px;
   }
   
-  .image-placeholder {
+  .product-image {
     width: 100%;
     height: 150px;
     background: #ddd;

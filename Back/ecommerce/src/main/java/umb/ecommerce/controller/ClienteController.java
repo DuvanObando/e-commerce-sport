@@ -12,30 +12,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import umb.ecommerce.dto.UsuarioDTO;
-import umb.ecommerce.model.Usuario;
-import umb.ecommerce.service.UsuarioService;
+import umb.ecommerce.dto.ClienteDTO;
+import umb.ecommerce.model.Cliente;
+import umb.ecommerce.service.ClienteService;
 
 @RestController
 @RequestMapping("/usuarios")
 @RequiredArgsConstructor
 @Log4j2
-public class UsuarioController {
+public class ClienteController {
 
-	private final UsuarioService usuarioService;
+	private final ClienteService usuarioService;
 
 	//Endpoint para registrar un nuevo usuario.
     @PostMapping("/registro")
     public ResponseEntity<Map<String, Object>> 
-    registrarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
+    registrarUsuario(@RequestBody ClienteDTO usuarioDTO) {
         log.info("Solicitud recibida para registrar usuario con correo: {}", usuarioDTO.getCorreo());
 
         Map<String, Object> response = new HashMap<>(); // Estructura de respuesta
 
         try {
-            Usuario usuario = usuarioService.guardarUsuario(usuarioDTO);
+            Cliente usuario = usuarioService.guardarUsuario(usuarioDTO);
             log.info("Datos recibidos: {}", usuarioDTO);
-            log.info("Usuario registrado con éxito. ID: {}", usuario.getIdUsuario());
+            log.info("Usuario registrado con éxito. ID: {}", usuario.getIdCliente());
             
             if (usuarioDTO.getCorreo() == null || usuarioDTO.getCorreo().isEmpty()) {
                 throw new IllegalArgumentException("El correo no puede estar vacío.");

@@ -1,0 +1,11 @@
+.admin-dashboard {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .admin-opciones {
+    margin-top: 1rem;
+    line-height: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }

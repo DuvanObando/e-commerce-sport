@@ -1,0 +1,11 @@
+.cliente-dashboard {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .cliente-opciones {
+    margin-top: 1rem;
+    line-height: 2rem;
+    list-style-type: none;
+    padding: 0;
+  }

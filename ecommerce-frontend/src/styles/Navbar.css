@@ -1,0 +1,91 @@
+/* Contenedor general del navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #3166E0; /* Color morado vibrante */
+    padding: 15px 30px;
+    position: relative;
+  }
+  
+  /* Sección izquierda: logo + links */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Logo de la tienda */
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-right: 30px;
+  }
+  
+  /* Menú de navegación */
+  .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Sección derecha: íconos */
+  .navbar-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+  }
+  
+  .navbar-icons a,
+  .navbar-icons span {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cuenta-dropdown {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .cuenta-menu {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+    text-align: left;
+  }
+  
+  .cuenta-menu p {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+  }
+  
+  .cuenta-menu button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cuenta-menu button:hover {
+    background: #c62828;
+  }

@@ -22,7 +22,17 @@ const Inicio = () => {
   // Si el login es exitoso, redirigimos al Home después de 2 segundos
   if (resultado.success) {
     setMensaje("Inicio de sesión exitoso. Redirigiendo...");
-    setTimeout(() => navigate("/"), 2000);
+    
+    const tipoUsuario = resultado.usuario?.tipo || "";
+    
+    // Redirigir según el tipo
+    setTimeout(() => {
+      if (tipoUsuario === "ADMINISTRADOR") navigate("/admin");
+      else if (tipoUsuario === "EMPLEADO") navigate("/empleado");
+      else if (tipoUsuario === "CLIENTE") navigate("/cliente");
+      else navigate("/");
+    }, 2000);
+
   } else {
     setMensaje(resultado.message);
   }

@@ -7,13 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "usuarios")
-public class Usuario {
+@Table(name = "clientes")
+public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_usuario")
-	private Long idUsuario;
+	@Column(name = "cliente_id")
+	private Long idCliente;
 
 	@Column(name = "nombre", nullable = false, length = 100)
 	private String nombre;
