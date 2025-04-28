@@ -18,7 +18,7 @@ function App() {
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/registro" element={<Registro />} />
          {/* Dashboards protegidos por tipo de usuario */} 
-         <Route path="/cliente" element={<ClienteDashboard />} />
+        <Route path="/cliente" element={<ClienteDashboard />} />
         <Route path="/empleado" element={<EmpleadoDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />

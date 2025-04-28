@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUsuarioAutenticado } from "../utils/auth";
 import { cerrarSesion } from "../service/InicioService"; // Usamos la función de logout
 import "../styles/Navbar.css";
- 
+
 const Navbar = () => {
     const usuario = getUsuarioAutenticado();
     const tipo = usuario?.tipo;
