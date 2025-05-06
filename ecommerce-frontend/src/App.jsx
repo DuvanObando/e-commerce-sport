@@ -17,7 +17,7 @@ function App() {
       <Route path="/" element={<Home />} />
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/registro" element={<Registro />} />
-         {/* Dashboards protegidos por tipo de usuario */} 
+         {/* Dashboards protegidos por tipo de usuario */} git 
         <Route path="/cliente" element={<ClienteDashboard />} />
         <Route path="/empleado" element={<EmpleadoDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
