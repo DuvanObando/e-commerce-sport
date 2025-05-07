@@ -4,6 +4,8 @@
   import articulo1 from "../assets/articulo1.jpg";
   import articulo2 from "../assets/articulo2.jpg";
   import articulo3 from "../assets/articulo3.jpg";
+import "../styles/DetalleProducto.css"; 
+
 
   const productos = [
     {

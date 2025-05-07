@@ -7,6 +7,9 @@ import EmpleadoDashboard from "./pages/EmpleadoDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navbar from "./components/Navbar"
 import DetalleProducto from "./pages/DetalleProducto";
+import Catalogo from "./pages/Catalogo"; // Importamos el componente
+import DetalleCatalogo from "./pages/DetalleCatalogo";
+
 
 function App() {
   return (
@@ -22,6 +25,8 @@ function App() {
         <Route path="/empleado" element={<EmpleadoDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
+        <Route path="/catalogo" element={<Catalogo />} />
+        <Route path="/catalogo/producto/:id" element={<DetalleCatalogo />} />
       </Routes>
     </Router>
   );

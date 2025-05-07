@@ -17,7 +17,7 @@ const Inicio = () => {
     console.log("Correo:", correo, "Contraseña:", contrasena, "Recordar:", recuerdame);
     
      // Llamamos a la función de autenticación
-     const resultado = await iniciarSesion(correo, contrasena);
+    const resultado = await iniciarSesion(correo, contrasena);
 
   // Si el login es exitoso, redirigimos al Home después de 2 segundos
   if (resultado.success) {
