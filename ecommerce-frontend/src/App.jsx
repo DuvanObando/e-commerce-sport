@@ -10,17 +10,19 @@ import DetalleProducto from "./pages/DetalleProducto";
 import Catalogo from "./pages/Catalogo"; // Importamos el componente
 import DetalleCatalogo from "./pages/DetalleCatalogo";
 import ResponderPQRs from "./pages/ResponderPQRs";
+import OrderTracking from "./pages/OrderTracking";
+
 
 function App() {
   return (
     <Router>
-      <Navbar /> 
+      <Navbar />
       <Routes>
-      {/* Rutas públicas */} 
-      <Route path="/" element={<Home />} />
+        {/* Rutas públicas */}
+        <Route path="/" element={<Home />} />
         <Route path="/inicio" element={<Inicio />} />
         <Route path="/registro" element={<Registro />} />
-         {/* Dashboards protegidos por tipo de usuario */} git 
+        {/* Dashboards protegidos por tipo de usuario */} git
         <Route path="/cliente" element={<ClienteDashboard />} />
         <Route path="/empleado" element={<EmpleadoDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
@@ -28,6 +30,7 @@ function App() {
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/catalogo/producto/:id" element={<DetalleCatalogo />} />
         <Route path="/responder-pqrs" element={<ResponderPQRs />} />
+        <Route path="/seguimiento" element={<OrderTracking />} />
       </Routes>
     </Router>
   );
