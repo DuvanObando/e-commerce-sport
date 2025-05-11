@@ -11,6 +11,7 @@ import Catalogo from "./pages/Catalogo"; // Importamos el componente
 import DetalleCatalogo from "./pages/DetalleCatalogo";
 import ResponderPQRs from "./pages/ResponderPQRs";
 import OrderTracking from "./pages/OrderTracking";
+import HistorialCompras from "./pages/HistorialCompras";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/catalogo/producto/:id" element={<DetalleCatalogo />} />
         <Route path="/responder-pqrs" element={<ResponderPQRs />} />
         <Route path="/seguimiento" element={<OrderTracking />} />
+        <Route path="/historial" element={<HistorialCompras />} />
       </Routes>
     </Router>
   );

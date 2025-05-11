@@ -1,0 +1,106 @@
+/* src/styles/HistorialCompras.css */
+
+/* Contenedor general del historial */
+.historial-container {
+  font-family: Arial, sans-serif;
+  background: #479FD6;
+  color: white;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+/* Título centrado */
+.historial-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Lista de tarjetas */
+.lista-compras {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Tarjeta individual */
+.compra-item {
+  background: white;
+  color: black;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Área de detalles desplegables */
+details {
+  margin-top: 10px;
+}
+
+summary {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+/* Lista de productos */
+.detalle-productos {
+  list-style: none;
+  padding: 0;
+}
+
+.producto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+/* Imagen del producto */
+.imagen-producto {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: block;
+}
+.imagen-producto {
+  background-color: lightgray; /* solo para ver si carga */
+}
+
+
+
+/* Etiquetas de estado */
+.estado-tag {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.estado-tag.entregado {
+  background-color: #28a745;
+  color: white;
+}
+
+.estado-tag.enviado {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.estado-tag.pendiente {
+  background-color: #ffc107;
+  color: black;
+}
