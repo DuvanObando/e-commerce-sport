@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar"
 import DetalleProducto from "./pages/DetalleProducto";
 import Catalogo from "./pages/Catalogo"; // Importamos el componente
 import DetalleCatalogo from "./pages/DetalleCatalogo";
+import OrderTracking from "./pages/OrderTracking";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/producto/:id" element={<DetalleProducto />} />
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/catalogo/producto/:id" element={<DetalleCatalogo />} />
+        <Route path="/seguimiento" element={<OrderTracking />} />
       </Routes>
     </Router>
   );
