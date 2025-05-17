@@ -1,0 +1,78 @@
+/* src/styles/HistorialVentas.css */
+.imagen-producto {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+
+.historial-container {
+  font-family: Arial, sans-serif;
+  background: #479fd6;
+  color: white;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.historial-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.lista-ventas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.venta-item {
+  background: white;
+  color: black;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+details {
+  margin-top: 10px;
+}
+summary {
+  cursor: pointer;
+  color: #007bff;
+  font-weight: bold;
+}
+summary:hover {
+  text-decoration: underline;
+}
+
+.detalle-productos {
+  list-style: none;
+  padding: 0;
+}
+.producto-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.estado-tag {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.estado-tag.completada { background-color: #28a745; color: white; }
+.estado-tag.pendiente   { background-color: #ffc107; color: black; }
+.estado-tag.anulada     { background-color: #dc3545; color: white; }
