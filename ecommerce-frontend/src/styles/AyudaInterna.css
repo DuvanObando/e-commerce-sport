@@ -1,0 +1,122 @@
+.ayuda-interna-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ccdff180;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.ayuda-interna-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.ayuda-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.ayuda-busqueda {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.ayuda-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.ayuda-categoria-btn {
+  background: #f3f6fa;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ayuda-categoria-btn.activa,
+.ayuda-categoria-btn:hover {
+  background: #479fd6;
+  color: #fff;
+}
+
+.cat-icon {
+  font-size: 1.3rem;
+}
+
+.ayuda-preguntas {
+  margin-top: 1.5rem;
+}
+
+.ayuda-categoria-bloque {
+  margin-bottom: 2rem;
+}
+
+.ayuda-categoria-bloque h2 {
+  font-size: 1.2rem;
+  color: #479fd6;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ayuda-pregunta-item {
+  margin-bottom: 0.5rem;
+}
+
+.pregunta-btn {
+  background: none;
+  border: none;
+  color: #2d3748;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  transition: color 0.2s;
+  width: 100%;
+}
+
+.pregunta-btn:hover {
+  color: #479fd6;
+  text-decoration: underline;
+}
+
+.ayuda-respuesta {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 0.3rem;
+  color: #333;
+  font-size: 0.98rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 600px) {
+  .ayuda-interna-container {
+    padding: 1rem 0.5rem;
+  }
+  .ayuda-categoria-bloque h2 {
+    font-size: 1rem;
+  }
+  .ayuda-categoria-btn {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.7rem;
+  }
+} 

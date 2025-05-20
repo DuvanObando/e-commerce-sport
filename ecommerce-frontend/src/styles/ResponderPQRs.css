@@ -217,6 +217,7 @@ h1 {
 
 .card-body {
     padding: 1.25rem;
+    background: #ccdff180;
 }
 
 .card-body h3 {
@@ -259,7 +260,7 @@ h1 {
 
   /* Panel de respuesta */
 .response-panel {
-    background-color: white;
+    background-color: #ccdff180;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     padding: 1.5rem;

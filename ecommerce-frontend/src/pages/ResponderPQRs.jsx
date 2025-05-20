@@ -133,9 +133,6 @@ const updatePqrsStatus = (pqrsId, newStatus) => {
 return (
     <div className="responder-pqrs-container">
     <header className="pqrs-header">
-        <button className="back-button" onClick={() => navigate(-1)}>
-        <span className="arrow">←</span> Volver al Panel
-        </button>
         <h1>Responder PQRs</h1>
         <p className="subtitle">Gestión de Peticiones, Quejas, Reclamos y Sugerencias</p>
     </header>

@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="navbar-left">
         <div className="logo">Sports Store</div>
         <ul className="nav-links">
-          <li><Link to="/">🏠 Home</Link></li>
+          {(!tipo || tipo === "CLIENTE") && <li><Link to="/">🏠 Home</Link></li>}
 
           {tipo === "CLIENTE" && (
             <>
@@ -36,6 +36,7 @@ const Navbar = () => {
             <>
               <li><Link to="/empleado/pqrs">📬 PQRs</Link></li>
               <li><Link to="/empleado/ventas">📈 Ventas</Link></li>
+              <li><Link to="/empleado/ayuda">🆘 Ayuda interna</Link></li>
             </>
           )}
 

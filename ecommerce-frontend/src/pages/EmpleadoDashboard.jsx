@@ -15,7 +15,6 @@ const EmpleadoDashboard = () => {
       <ul className="empleado-opciones">
         <li onClick={() => navigate('/responder-pqrs')}> 📬 Responder consultas (PQRs)</li>
         <li><Link to="/empleado/ventas">📈 Ver historial de ventas</Link></li>
-        <li>🧾 Ver historial de compras</li>
         <li>🆘 Solicitar ayuda interna</li>
       </ul>
     </div>

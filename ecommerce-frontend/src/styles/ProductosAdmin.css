@@ -1,0 +1,181 @@
+.productos-admin-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ccdff180;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 2.5rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.productos-admin-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.productos-barra {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.productos-barra input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  font-size: 1rem;
+}
+
+.btn-agregar {
+  background: #479fd6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-agregar:hover {
+  background: #357ab8;
+}
+
+.productos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.productos-vacio {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.producto-card {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.producto-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.producto-info {
+  flex: 1;
+}
+
+.producto-info h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  color: #2d3748;
+}
+
+.producto-precio {
+  color: #479fd6;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.producto-stock {
+  color: #666;
+  font-size: 0.98rem;
+}
+
+.producto-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.producto-acciones button {
+  background: #e2e8f0;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.producto-acciones button:hover {
+  background: #479fd6;
+  color: #fff;
+}
+
+.producto-acciones .eliminar {
+  background: #ffdddd;
+  color: #c00;
+}
+
+.producto-acciones .eliminar:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  min-width: 320px;
+  max-width: 95vw;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #479fd6;
+}
+
+.modal input, .modal textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  font-size: 1rem;
+}
+
+.modal textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.modal-acciones {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.producto-img-detalle {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+} 

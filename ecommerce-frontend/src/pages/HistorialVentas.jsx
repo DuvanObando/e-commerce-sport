@@ -1,7 +1,7 @@
 // src/pages/HistorialVentas.jsx
 
 import React, { useState, useEffect } from "react";
-import { obtenerVentas }           from "../service/ventaService";
+import { obtenerVentas } from "../service/ventaService";
 import "../styles/HistorialVentas.css";
 
 /**
@@ -13,9 +13,9 @@ import "../styles/HistorialVentas.css";
  * - Permite desplegar los productos con imagen y cantidad.
  */
 export default function HistorialVentas() {
-  const [ventas,  setVentas]  = useState([]);
+  const [ventas, setVentas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error,   setError]   = useState(null);
+  const [error, setError] = useState(null);
 
   // Formatea "2025-05-01" → "1 de mayo de 2025"
   const formatearFecha = fechaStr => {
@@ -26,7 +26,7 @@ export default function HistorialVentas() {
   useEffect(() => {
     obtenerVentas()
       .then(data => {
-        console.log("Ventas recibidas:", data);               // <-- comprueba en la consola
+        console.log("Ventas recibidas:", data);
         const ordenadas = data.sort((a, b) =>
           new Date(b.fecha) - new Date(a.fecha)
         );
@@ -42,7 +42,7 @@ export default function HistorialVentas() {
 
   return (
     <div className="historial-container">
-      <h2>Historial de Ventas</h2>
+      <h2>📈 Historial de Ventas</h2>
 
       {loading && <p>Cargando historial de ventas…</p>}
 
@@ -58,33 +58,39 @@ export default function HistorialVentas() {
         <ul className="lista-ventas">
           {ventas.map(v => (
             <li key={v.id} className="venta-item">
-              <p><strong>Venta:</strong> {v.id}</p>
-              <p><strong>Fecha:</strong> {formatearFecha(v.fecha)}</p>
-              <p><strong>Cliente:</strong> {v.cliente}</p>
-              <p><strong>Total:</strong> ${v.total.toFixed(2)}</p>
-              <p>
-                <strong>Estado:</strong>{" "}
-                <span className={`estado-tag ${v.estado.toLowerCase()}`}>
-                  {v.estado}
-                </span>
-              </p>
-              <p><strong>Método de pago:</strong> Pago contra entrega</p>
+              <div className="venta-header">
+                <div className="venta-info-principal">
+                  <h3>Venta #{v.id}</h3>
+                  <span className={`estado-tag ${v.estado.toLowerCase()}`}>
+                    {v.estado}
+                  </span>
+                </div>
+                <div className="venta-fecha">
+                  {formatearFecha(v.fecha)}
+                </div>
+              </div>
 
-              <details>
-                <summary>Ver productos</summary>
-                <ul className="detalle-productos">
-                  {v.productos.map(p => (
-                    <li key={p.id} className="producto-item">
-                      <img
-                        src={p.imagen}
-                        alt={p.nombre}
-                        className="imagen-producto"
-                      />
-                      <span>{p.nombre} × {p.cantidad}</span>
-                    </li>
-                  ))}
-                </ul>
-              </details>
+              <div className="venta-detalles">
+                <p><strong>Cliente:</strong> {v.cliente}</p>
+                <p><strong>Total:</strong> ${v.total.toFixed(2)}</p>
+                <p><strong>Método de pago:</strong> Pago contra entrega</p>
+
+                <details>
+                  <summary>Ver productos</summary>
+                  <ul className="detalle-productos">
+                    {v.productos.map(p => (
+                      <li key={p.id} className="producto-item">
+                        <img
+                          src={p.imagen}
+                          alt={p.nombre}
+                          className="imagen-producto"
+                        />
+                        <span>{p.nombre} × {p.cantidad}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </div>
             </li>
           ))}
         </ul>

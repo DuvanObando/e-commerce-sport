@@ -16,6 +16,8 @@ import HistorialVentas from "./pages/HistorialVentas";
 import Carrito from "./pages/Carrito";
 import Factura from "./pages/Factura";
 import { CartProvider } from "./context/CartContext";
+import AyudaInterna from "./pages/AyudaInterna";
+import ProductosAdmin from "./pages/ProductosAdmin";
 
 function App() {
   return (
@@ -34,12 +36,14 @@ function App() {
           <Route path="/producto/:id" element={<DetalleProducto />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/catalogo/producto/:id" element={<DetalleCatalogo />} />
-          <Route path="/responder-pqrs" element={<ResponderPQRs />} />
+          <Route path="/empleado/pqrs" element={<ResponderPQRs />} />
           <Route path="/seguimiento" element={<Seguimiento />} />
           <Route path="/historial" element={<HistorialCompras />} />
           <Route path="/empleado/ventas"  element={<HistorialVentas   />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/factura" element={<Factura />} />
+          <Route path="/empleado/ayuda" element={<AyudaInterna />} />
+          <Route path="/admin/productos" element={<ProductosAdmin />} />
         </Routes>
       </Router>
     </CartProvider>

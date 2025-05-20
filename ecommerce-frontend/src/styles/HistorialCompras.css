@@ -23,7 +23,7 @@
 /* Contenedor principal */
 .historial-container {
   font-family: Arial, sans-serif;
-  background: var(--color-primary);
+  background: white;
   color: var(--color-white);
   min-height: 100vh;
   padding: 2rem;

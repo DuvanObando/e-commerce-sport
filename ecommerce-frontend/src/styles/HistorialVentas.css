@@ -1,79 +1,139 @@
 /* src/styles/HistorialVentas.css */
-.imagen-producto {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  display: block;
-}
 
+:root {
+  --color-primary: #479FD6;
+  --color-text: #2d3748;
+  --color-text-light: #666;
+  --color-background: #f8f9fa;
+  --color-border: #e2e8f0;
+  --color-white: #fff;
+  --color-pendiente: #ffc107;
+  --color-enviado: #17a2b8;
+  --color-entregado: #28a745;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
 
 .historial-container {
   font-family: Arial, sans-serif;
   background: white;
-  color: white;
+  color: var(--color-white);
   min-height: 100vh;
-  padding: 30px;
+  padding: 2rem;
 }
 
 .historial-container h2 {
+  color: black;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: black; 
 }
 
 .lista-ventas {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .venta-item {
-  background: white;
-  color: black;
-  width: 100%;
-  max-width: 700px;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  background: #ccdff180;
+  color: var(--color-text);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-details {
-  margin-top: 10px;
-}
-summary {
-  cursor: pointer;
-  color: #007bff;
-  font-weight: bold;
-}
-summary:hover {
-  text-decoration: underline;
+.venta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.detalle-productos {
-  list-style: none;
-  padding: 0;
-}
-.producto-item {
+.venta-info-principal {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  word-break: break-word;
+  gap: 1rem;
+}
+
+.venta-info-principal h3 {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin: 0;
 }
 
 .estado-tag {
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 5px;
-  font-size: 13px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
 }
-.estado-tag.completada { background-color: #28a745; color: white; }
-.estado-tag.pendiente   { background-color: #ffc107; color: black; }
-.estado-tag.anulada     { background-color: #dc3545; color: white; }
+
+.estado-tag.pendiente {
+  background-color: var(--color-pendiente);
+  color: var(--color-text);
+}
+
+.estado-tag.enviado {
+  background-color: var(--color-enviado);
+  color: var(--color-white);
+}
+
+.estado-tag.entregado {
+  background-color: var(--color-entregado);
+  color: var(--color-white);
+}
+
+.venta-fecha {
+  color: #666;
+  font-size: 14px;
+}
+
+.venta-detalles {
+  margin-top: 15px;
+}
+
+.venta-detalles p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.detalle-productos {
+  background: var(--color-background);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.producto-item {
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.producto-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.imagen-producto {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}

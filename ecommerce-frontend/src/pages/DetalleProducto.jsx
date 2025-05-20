@@ -51,6 +51,16 @@ const DetalleProducto = () => {
   if (!producto) return <p>Producto no encontrado</p>;
 
   const handleAgregarCarrito = () => {
+    // Verificar si el usuario ha iniciado sesión
+    const isLoggedIn = localStorage.getItem("token") !== null;
+    if (!isLoggedIn) {
+      setMensaje("Debes iniciar sesión para añadir productos al carrito.");
+      setTimeout(() => {
+        navigate("/inicio");
+      }, 1500);
+      return;
+    }
+
     if (!tallaSeleccionada) {
       setMensaje("Debes seleccionar una talla.");
       return;
