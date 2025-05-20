@@ -1,8 +1,8 @@
 /* Estilo base del contenedor del catálogo */
 .catalogo-container {
     font-family: Arial, sans-serif;
-    color: white;
-    background: #479FD6; /* Igual que Home */
+    color: black;
+    background: white; /* Igual que Home */
     min-height: 100vh;
     padding: 30px;
 }
@@ -20,16 +20,22 @@
     text-align: center;
     margin-bottom: 30px;
     font-size: 1rem;
-    color: #ffffff;
+    color: black;
 }
 
   /* Caja de filtros */
 .filtros {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #ccdff180;
     color: black;
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin: 30px 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: flex-end;
 }
 
   /* Grilla de productos */
@@ -42,7 +48,6 @@
 
   /* Tarjeta de producto individual */
 .product-card {
-    background: white;
     color: black;
     padding: 15px;
     border-radius: 10px;
@@ -50,6 +55,7 @@
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease;
+    background: #ccdff180;
 }
 
 .product-card:hover {
@@ -70,4 +76,75 @@
 .discounted {
     text-decoration: line-through;
     color: red;
+}
+
+/* Botón Ver más */
+.product-card button {
+    background-color: #479FD6;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.product-card button:hover {
+    background-color: #347ca0;
+}
+
+/* Estilos para los filtros */
+.filtro-item {
+    margin: 0;
+    min-width: 150px;
+    flex: 1;
+    max-width: 200px;
+}
+
+.filtro-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filtro-item select,
+.filtro-item input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+/* Estilos específicos para el filtro de precio */
+.filtro-item.precio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.filtro-item.precio label {
+    margin-bottom: 0;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.precio-inputs {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+}
+
+.precio-inputs input[type="number"] {
+    width: calc(50% - 5px);
+    min-width: 80px;
+}
+
+.precio-inputs input[type="number"]::-webkit-inner-spin-button,
+.precio-inputs input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
 }

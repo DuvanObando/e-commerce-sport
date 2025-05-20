@@ -12,7 +12,7 @@
 
 .historial-container {
   font-family: Arial, sans-serif;
-  background: #479fd6;
+  background: white;
   color: white;
   min-height: 100vh;
   padding: 30px;
@@ -23,6 +23,7 @@
   margin-bottom: 30px;
   font-size: 28px;
   font-weight: bold;
+  color: black; 
 }
 
 .lista-ventas {

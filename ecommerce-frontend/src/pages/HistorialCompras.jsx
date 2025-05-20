@@ -1,89 +1,153 @@
 // src/pages/HistorialCompras.jsx
 import React, { useEffect, useState } from "react";
 import "../styles/HistorialCompras.css";
-import { obtenerHistorialCompras } from "../service/HistorialService";
+import { HistorialService } from "../service/HistorialService";
 
 /**
- * Muestra el historial de compras del cliente.
- * Incluye número de pedido, fecha, total, estado, cantidad de productos y sus imágenes.
+ * Componente para mostrar un producto individual en el historial
+ */
+const ProductoHistorial = ({ producto }) => (
+  <div className="producto-item">
+    <div className="producto-info">
+      <h5>{producto.nombre}</h5>
+      <div className="producto-detalles">
+        <span className="producto-cantidad">
+          Cantidad: {producto.cantidad}
+        </span>
+      </div>
+      <div className="producto-precios">
+        <span className="precio-unitario">
+          ${producto.precio?.toLocaleString()} c/u
+        </span>
+        <span className="precio-total">
+          ${(producto.precio * producto.cantidad)?.toLocaleString()}
+        </span>
+      </div>
+    </div>
+  </div>
+);
+
+/**
+ * Componente para mostrar la sección de productos de una compra
+ */
+const SeccionProductos = ({ productos }) => {
+  const lista = productos || [];
+  return (
+    <div className="compra-productos">
+      <h4>🛍 Productos ({lista.length})</h4>
+      <div className="productos-lista">
+        {lista.map((producto, index) => (
+          <ProductoHistorial key={index} producto={producto} />
+        ))}
+      </div>
+      <div className="productos-resumen">
+        <p className="productos-total">
+          Total de productos: {lista.reduce((sum, p) => sum + p.cantidad, 0)}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * Componente principal del historial de compras
  */
 const HistorialCompras = () => {
   const [compras, setCompras] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  /**
-   * Convierte una fecha en formato legible (ej: 2 de mayo de 2025)
-   */
+  useEffect(() => {
+    const cargarHistorial = async () => {
+      try {
+        // Por ahora usamos el ID 1 como ejemplo, después se debe obtener del usuario logueado
+        const historial = await HistorialService.obtenerHistorialCompras(1);
+        setCompras(historial.data || []);
+      } catch (error) {
+        setError('Error al cargar el historial de compras');
+        console.error('Error:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    cargarHistorial();
+  }, []);
+
   const formatearFecha = (fechaString) => {
+    if (!fechaString) return "";
     const fecha = new Date(fechaString);
-    return fecha.toLocaleDateString("es-ES", {
+    return isNaN(fecha) ? "" : fecha.toLocaleDateString("es-ES", {
       day: "numeric",
       month: "long",
       year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
     });
   };
 
-  // Carga el historial al montar el componente
-  useEffect(() => {
-    obtenerHistorialCompras()
-      .then((comprasObtenidas) => {
-        setCompras(comprasObtenidas);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("Hubo un error al cargar el historial.");
-        setLoading(false);
-      });
-  }, []);
+  if (loading) {
+    return (
+      <div className="historial-container">
+        <h2>📄 Historial de Compras</h2>
+        <div className="loading">
+          <p>Cargando historial de compras...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="historial-container">
+        <h2>📄 Historial de Compras</h2>
+        <div className="error">
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="historial-container">
       <h2>📄 Historial de Compras</h2>
 
-      {loading && <p>Cargando historial...</p>}
-      {error && <p className="error">{error}</p>}
-      {!loading && compras.length === 0 && <p>No tienes compras registradas aún.</p>}
-
-      {!loading && compras.length > 0 && (
-        <ul className="lista-compras">
+      {compras.length === 0 ? (
+        <div className="sin-compras">
+          <p>No tienes compras registradas aún.</p>
+          <small>Tus compras aparecerán aquí cuando realices pedidos.</small>
+        </div>
+      ) : (
+        <div className="lista-compras">
           {compras.map((compra) => (
-            <li key={compra.id} className="compra-item">
-              <div>
-                <strong>Pedido:</strong> {compra.numeroPedido} <br />
-                <strong>Fecha:</strong> {formatearFecha(compra.fecha)} <br />
-                <strong>Total:</strong> ${compra.total} <br />
-                <strong>Total productos:</strong>{" "}
-                {compra.productos.reduce((acc, p) => acc + p.cantidad, 0)} <br />
-                <strong>Estado:</strong>{" "}
-                <span className={`estado-tag ${compra.estado.toLowerCase()}`}>
-                  {compra.estado}
-                </span>
-                <br />
+            <div key={compra.pedido_id} className="compra-item">
+              <div className="compra-header">
+                <div className="compra-info-principal">
+                  <h3>Pedido #{compra.pedido_id}</h3>
+                  <span className={`estado-tag ${compra.estado?.toLowerCase()}`}>
+                    {compra.estado}
+                  </span>
+                </div>
+                <div className="compra-fecha">
+                  {formatearFecha(compra.fecha_pedido)}
+                </div>
               </div>
 
-              {/* Lista de productos con imagen y cantidad */}
-              <details>
-                <summary>📄 Ver productos</summary>
-                <ul className="detalle-productos">
-                  {compra.productos.map((p, index) => (
-                    <li key={index} className="producto-item">
-                      {/*Imagen del producto */}
-                      {p.imagen && (
-                        <img
-                          src={p.imagen}
-                          alt={p.nombre}
-                          className="imagen-producto"
-                        />
-                      )}
-                      {p.nombre} × {p.cantidad}
-                    </li>
-                  ))}
-                </ul>
-              </details>
-            </li>
+              <div className="compra-detalles">
+                <SeccionProductos productos={compra.detalles} />
+
+                <div className="compra-resumen">
+                  <div className="resumen-pago">
+                    <p><strong>Método de pago:</strong> Pago contra entrega</p>
+                    <p className="total">
+                      <strong>Total:</strong> ${compra.total?.toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

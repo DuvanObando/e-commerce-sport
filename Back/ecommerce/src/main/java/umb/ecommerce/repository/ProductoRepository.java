@@ -2,8 +2,8 @@ package umb.ecommerce.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import umb.ecommerce.model.DetallePedido;
+import umb.ecommerce.model.Producto;
 
 @Repository
-public interface DetallePedidoRepository extends JpaRepository<DetallePedido, Long> {
-}
+public interface ProductoRepository extends JpaRepository<Producto, Long> {
+} 

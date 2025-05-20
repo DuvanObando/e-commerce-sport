@@ -65,4 +65,10 @@ public class ClienteService {
 	                        "Usuario no encontrado con el correo: " + correo));
 	    }
 
+	    public Cliente buscarPorId(Long id) {
+	        return usuarioRepository.findById(id)
+	                .orElseThrow(() -> new IllegalArgumentException(
+	                        "Usuario no encontrado con el id: " + id));
+	    }
+
 	}

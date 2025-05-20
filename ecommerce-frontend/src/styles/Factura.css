@@ -1,0 +1,140 @@
+/* src/styles/Factura.css */
+.factura-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.factura-box {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.factura-box h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.factura-info {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.factura-cliente {
+  margin-bottom: 2rem;
+}
+
+.factura-cliente h3,
+.factura-detalle h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.factura-detalle table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.factura-detalle th,
+.factura-detalle td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.factura-detalle th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.factura-detalle tr:hover {
+  background-color: #f8f9fa;
+}
+
+.color-muestra {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.factura-total {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.total-final {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+.factura-acciones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.imprimir-btn,
+.volver-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.imprimir-btn {
+  background-color: #4299e1;
+  color: white;
+}
+
+.volver-btn {
+  background-color: #48bb78;
+  color: white;
+}
+
+.imprimir-btn:hover,
+.volver-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para impresión */
+@media print {
+  .factura-container {
+    padding: 0;
+    background: white;
+  }
+
+  .factura-box {
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .factura-acciones {
+    display: none;
+  }
+
+  .color-muestra {
+    border: 1px solid #000 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

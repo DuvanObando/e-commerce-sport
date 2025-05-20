@@ -2,33 +2,34 @@ package umb.ecommerce.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
 @Data
-@NoArgsConstructor
 @Entity
-@Table(name = "detalle_pedido")
+@Table(name = "detalles_pedido")
 public class DetallePedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "detalle_pedido_id")
-	private Long id;
+	private Long detallePedidoId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pedido_id", nullable = false)
-    private Pedido pedido;
+	@JoinColumn(name = "pedido_id")
+	private Pedido pedido;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "producto_id", nullable = false)
-    private Producto producto;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "producto_id")
+	private Producto producto;
 
-	@Column(name = "cantidad", nullable = false)
-	private int cantidad;
+	@Column(nullable = false)
+	private Integer cantidad;
 
-	@Column(name = "estado", length = 50)
+	@Column(length = 50)
 	private String estado;
 
-	@Column(name = "observaciones", length = 255)
+	@Column(length = 255)
 	private String observaciones;
+
+	@Column(name = "precio_unitario", precision = 10, scale = 2)
+	private BigDecimal precioUnitario;
 }

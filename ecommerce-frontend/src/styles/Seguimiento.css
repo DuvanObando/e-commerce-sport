@@ -2,114 +2,150 @@
 .order-tracking-container {
     max-width: 1200px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 0 1rem;
     font-family: 'Arial', sans-serif;
   }
   
   /* Títulos */
   .page-title {
-    font-size: 2rem;
+    text-align: center;
     color: #2d3748;
     margin-bottom: 2rem;
-    font-weight: 700;
+    font-size: 2rem;
   }
   
   .order-id {
-    color: #4a5568;
+    color: #479FD6;
+    font-weight: bold;
   }
   
   .section-title {
-    font-size: 1.5rem;
     color: #2d3748;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-size: 1.5rem;
   }
   
   /* Tarjetas de sección */
   .status-card,
   .products-card {
-    background: #ffffff;
+    background: #ccdff180;
     border-radius: 12px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   /* Barra de progreso */
   .progress-bar {
     display: flex;
     justify-content: space-between;
+    margin: 2rem 0;
     position: relative;
-    margin-bottom: 2rem;
+  }
+  
+  .progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e2e8f0;
+    z-index: 1;
   }
   
   .progress-step {
-    text-align: center;
-    flex: 1;
     position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
   }
   
   .step-icon {
     width: 40px;
     height: 40px;
-    margin: 0 auto 0.5rem;
     border-radius: 50%;
+    background: white;
+    border: 2px solid #e2e8f0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e2e8f0;
-    color: #4a5568;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
   }
   
-  .progress-step.active .step-icon,
+  .progress-step.active .step-icon {
+    border-color: #479FD6;
+    background: #479FD6;
+    color: white;
+  }
+  
   .progress-step.completed .step-icon {
-    background: #4299e1;
+    border-color: #48BB78;
+    background: #48BB78;
     color: white;
   }
   
   .step-label {
-    font-size: 0.9rem;
-    color: #4a5568;
+    font-size: 0.875rem;
+    color: #718096;
+    text-align: center;
   }
   
-  .progress-step.active .step-label,
-  .progress-step.completed .step-label {
-    color: #2d3748;
-    font-weight: 500;
+  .active .step-label {
+    color: #479FD6;
+    font-weight: 600;
+  }
+  
+  .completed .step-label {
+    color: #48BB78;
+    font-weight: 600;
   }
   
   /* Detalles de envío */
   .shipping-details {
+    margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
   }
   
   .detail-item {
-    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 8px;
   }
   
   .detail-label {
-    font-weight: 600;
-    color: #4a5568;
-    display: block;
+    color: #718096;
+    font-weight: 500;
   }
   
   .detail-value {
     color: #2d3748;
+    font-weight: 600;
   }
   
   /* Lista de productos */
   .products-list {
-    margin-top: 1rem;
+    margin: 1.5rem 0;
   }
   
   .product-item {
     display: flex;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .product-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
   
   .product-image {
@@ -126,56 +162,78 @@
   
   .product-name {
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    color: #2d3748;
+    margin: 0 0 0.5rem 0;
   }
   
   .product-quantity,
-  .product-price {
-    color: #4a5568;
-    font-size: 0.9rem;
+  .product-price,
+  .product-size,
+  .product-color {
+    color: #718096;
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #e2e8f0;
   }
   
   .product-total {
     font-weight: 600;
     color: #2d3748;
+    font-size: 1.125rem;
   }
   
+  /* Totales */
   .order-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
     border-top: 2px solid #e2e8f0;
   }
   
-  .total-label {
+  .subtotal,
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  
+  .total {
+    font-size: 1.25rem;
     font-weight: 600;
-    font-size: 1.1rem;
+    color: #2d3748;
   }
   
-  .total-amount {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #2b6cb0;
-  }
-  
-  /* Botones */
+  /* Botones de acción */
   .action-buttons {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
   
   .btn-primary {
-    background: #4299e1;
+    background: #479FD6;
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
     border: none;
-    cursor: pointer;
-    transition: background 0.2s;
   }
   
   .btn-primary:hover {
@@ -184,15 +242,58 @@
   
   .btn-secondary {
     background: white;
-    color: #4299e1;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
-    border: 2px solid #4299e1;
-    cursor: pointer;
-    transition: all 0.2s;
+    color: #479FD6;
+    border: 2px solid #479FD6;
   }
   
   .btn-secondary:hover {
-    background: #ebf8ff;
+    background: #f7fafc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .order-tracking-container {
+      margin: 1rem;
+    }
+  
+    .progress-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .progress-bar::before {
+      display: none;
+    }
+  
+    .progress-step {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  
+    .step-icon {
+      margin-bottom: 0;
+    }
+  
+    .product-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .product-image {
+      margin: 0 auto 1rem;
+    }
+  
+    .product-total {
+      margin-top: 1rem;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+    }
+  
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+    }
   }

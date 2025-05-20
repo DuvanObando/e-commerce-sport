@@ -15,9 +15,11 @@ import lombok.extern.log4j.Log4j2;
 import umb.ecommerce.dto.ClienteDTO;
 import umb.ecommerce.model.Cliente;
 import umb.ecommerce.service.ClienteService;
+import umb.ecommerce.response.ApiResponse;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/api/clientes")
 @RequiredArgsConstructor
 @Log4j2
 public class ClienteController {
@@ -56,6 +58,16 @@ public class ClienteController {
             response.put("error", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
-    } 
-    
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<Cliente>> obtenerClientePorId(@PathVariable Long id) {
+        try {
+            Cliente cliente = usuarioService.buscarPorId(id);
+            return ResponseEntity.ok(new ApiResponse<>(true, "Cliente encontrado", cliente));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest()
+                .body(new ApiResponse<>(false, "Error al obtener el cliente: " + e.getMessage(), null));
+        }
+    }
 }

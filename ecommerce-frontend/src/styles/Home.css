@@ -1,28 +1,29 @@
 /* Contenedor general */
 .home-container {
     font-family: Arial, sans-serif;
-    color: white;
-    background: #479FD6;
+    color: black;
+    background: white;
   }
   
   /* Hero Section */
   .hero {
     position: relative;
     text-align: center;
-    height: 50vh;
+    height: 38vh;
   }
   
   .hero-image {
-    object-position: center bottom;
+    object-position: center;
     width: 100%;
-    height: 100%;
+    height: 80%;
     object-fit:cover;
     opacity: 0.8;
   }
   
   .hero-text {
+    color: white;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -34,7 +35,7 @@
   
   /* Sección de Productos Destacados */
   .trending-items {
-    padding: 30px;
+    padding: 1px;
     text-align: center;
   }
   
@@ -50,7 +51,7 @@
   }
   
   .product-card {
-    background: white;
+    background: #ccdff180;
     color: black;
     padding: 15px;
     border-radius: 10px;

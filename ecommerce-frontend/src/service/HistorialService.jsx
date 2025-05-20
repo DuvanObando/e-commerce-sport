@@ -10,7 +10,9 @@ import camiseta from "../assets/camiseta.jpg";
 import rodilleras  from "../assets/rodilleras.webp";
 import guantes  from "../assets/guantes.jpg";
 import pantaloneta  from "../assets/pantaloneta.webp";
+import axios from 'axios';
 
+const API_URL = 'http://localhost:8081/api';
 
 export const obtenerHistorialCompras = async () => {
   const comprasSimuladas = [
@@ -61,4 +63,16 @@ export const obtenerHistorialCompras = async () => {
       resolve(ordenado);
     }, 800);
   });
+};
+
+export const HistorialService = {
+    obtenerHistorialCompras: async (clienteId) => {
+        try {
+            const response = await axios.get(`${API_URL}/pedidos/cliente/${clienteId}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error al obtener el historial de compras:', error);
+            throw error;
+        }
+    }
 };
