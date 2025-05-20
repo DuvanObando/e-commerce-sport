@@ -45,6 +45,7 @@ const Navbar = () => {
               <li><Link to="/admin/productos">🛠️ Productos</Link></li>
               <li><Link to="/admin/usuarios">👥 Usuarios</Link></li>
               <li><Link to="/admin/reportes">📊 Reportes</Link></li>
+              <li><Link to="/admin/soporte">📬 Soporte</Link></li>
             </>
           )}
 

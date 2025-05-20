@@ -1,0 +1,157 @@
+.reportes-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.reportes-container h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.reporte-section {
+  background: #ccdff180;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reporte-section h2 {
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Estilos para la sección de ventas por fecha */
+.reporte-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.reporte-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.reporte-card:hover {
+  transform: translateY(-2px);
+}
+
+.reporte-card h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.reporte-card .total {
+  color: #2f855a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.reporte-card .cantidad {
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+/* Estilos para las tablas */
+.tabla-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background: #f7fafc;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #f7fafc;
+}
+
+/* Estilos para las reseñas */
+.resenas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.resena-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.resena-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.resena-header h3 {
+  color: #2d3748;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.calificacion {
+  color: #f6ad55;
+  font-size: 1.2rem;
+}
+
+.resena-card .usuario {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.resena-card .comentario {
+  color: #2d3748;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reportes-container {
+    padding: 1rem;
+  }
+
+  .reporte-section {
+    padding: 1.5rem;
+  }
+
+  .reporte-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resenas-grid {
+    grid-template-columns: 1fr;
+  }
+} 

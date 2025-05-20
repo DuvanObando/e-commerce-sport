@@ -1,0 +1,270 @@
+.soporte-admin-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.soporte-admin-container h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: #ccdff180;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filtro-grupo label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.filtro-grupo select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  min-width: 200px;
+  font-size: 1rem;
+}
+
+/* Lista de solicitudes */
+.solicitudes-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.solicitud-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+}
+
+.solicitud-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.solicitud-card.seleccionada {
+  border-left: 4px solid #4299e1;
+  background: #f8fafc;
+}
+
+.solicitud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tipo-badge, .estado-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.tipo-badge.queja {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.tipo-badge.reclamo {
+  background: #feebc8;
+  color: #c05621;
+}
+
+.tipo-badge.sugerencia {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+.tipo-badge.garantia {
+  background: #e9d8fd;
+  color: #553c9a;
+}
+
+.estado-badge.pendiente {
+  background: #fefcbf;
+  color: #975a16;
+}
+
+.estado-badge.en_proceso {
+  background: #bee3f8;
+  color: #2c5282;
+}
+
+.estado-badge.resuelto {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+.solicitud-info h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.solicitud-info p {
+  margin: 0.3rem 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+/* Panel de detalles */
+.detalles-panel {
+  background: #ccdff180;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.cerrar-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+.detalles-contenido {
+  display: grid;
+  gap: 2rem;
+}
+
+.info-cliente, .descripcion, .acciones, .respuesta-form {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-cliente h3, .descripcion h3, .respuesta-form h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+  font-size: 1.2rem;
+}
+
+.acciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.accion-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.accion-grupo label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.accion-grupo select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-size: 1rem;
+}
+
+.respuesta-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.enviar-btn {
+  background: #4299e1;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.enviar-btn:hover {
+  background: #3182ce;
+}
+
+.enviar-btn:disabled {
+  background: #a0aec0;
+  cursor: not-allowed;
+}
+
+.respuesta-previa {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #4299e1;
+}
+
+.respuesta-previa h3 {
+  margin: 0 0 1rem 0;
+  color: #2d3748;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .soporte-admin-container {
+    padding: 1rem;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .solicitudes-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .acciones {
+    grid-template-columns: 1fr;
+  }
+} 

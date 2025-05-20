@@ -18,6 +18,9 @@ import Factura from "./pages/Factura";
 import { CartProvider } from "./context/CartContext";
 import AyudaInterna from "./pages/AyudaInterna";
 import ProductosAdmin from "./pages/ProductosAdmin";
+import UsuariosAdmin from "./pages/UsuariosAdmin";
+import ReportesAdmin from "./pages/ReportesAdmin";
+import SoporteAdmin from './pages/SoporteAdmin';
 
 function App() {
   return (
@@ -44,6 +47,9 @@ function App() {
           <Route path="/factura" element={<Factura />} />
           <Route path="/empleado/ayuda" element={<AyudaInterna />} />
           <Route path="/admin/productos" element={<ProductosAdmin />} />
+          <Route path="/admin/usuarios" element={<UsuariosAdmin />} />
+          <Route path="/admin/reportes" element={<ReportesAdmin />} />
+          <Route path="/admin/soporte" element={<SoporteAdmin />} />
         </Routes>
       </Router>
     </CartProvider>
