@@ -21,6 +21,7 @@ import ProductosAdmin from "./pages/ProductosAdmin";
 import UsuariosAdmin from "./pages/UsuariosAdmin";
 import ReportesAdmin from "./pages/ReportesAdmin";
 import SoporteAdmin from './pages/SoporteAdmin';
+import ContactarSoporte from './pages/ContactarSoporte';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
           <Route path="/admin/usuarios" element={<UsuariosAdmin />} />
           <Route path="/admin/reportes" element={<ReportesAdmin />} />
           <Route path="/admin/soporte" element={<SoporteAdmin />} />
+          <Route path="/soporte" element={<ContactarSoporte />} />
         </Routes>
       </Router>
     </CartProvider>

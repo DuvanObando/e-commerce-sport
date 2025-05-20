@@ -156,7 +156,12 @@ export default function Seguimiento() {
             >
               Ver Factura
             </button>
-            <button className="btn-secondary">Contactar Soporte</button>
+            <button 
+              className="btn-secondary"
+              onClick={() => navigate('/soporte')}
+            >
+              Contactar Soporte
+            </button>
           </div>
         </>
       )}
